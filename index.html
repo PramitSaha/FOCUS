@@ -114,7 +114,7 @@
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code/Paper</span>
+                    <span>Code/Data</span>
                   </a>
                 </span>
 
@@ -147,8 +147,12 @@
         </div>
       </div>
       <p>
-        🌟 Highlights are the summary of the proposed work. They can be contributions in the paper or preferred key points.<br>
-        🌟 Point 2
+        🌟 Parameter-Efficient Finetuning (PEFT): Enables effective training of large Vision-Language Models (VLMs) on resource-constrained clients in Federated Learning.<br>
+        🌟 Two Key Factors for Layer Selection: (1) Client-specific layer importance score: Selects the most important VLM layers for finetuning on each client. (2) Inter-client layer diversity score: Encourages diverse layer selection across clients for optimal performance. <br>
+        🌟 Theoretical Motivation: Uses the principal eigenvalue magnitude of layerwise Neural Tangent Kernels (NTKs) as the client-specific layer importance score.<br>
+        🌟 Novel Layer Updating Strategy: Jointly optimizes layer importance and diversity using data-free, multi-objective meta-heuristic optimization on the server.<br>
+        🌟 New MedVQA-FL Dataset Released: Provides a large-scale dataset with 707,962 VQA triplets and 9 modality-specific clients for benchmarking.<br>
+        🌟 Extensive Experiments: Evaluates five different meta-heuristic algorithms for selecting both model and adapter layers in PEFT-FL, Conducts over 10,000 client-level experiments across 6 federated learning task settings, 58 medical image datasets, and 4 VLM architectures.<br>
         
       </p>
     </div>
