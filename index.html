@@ -438,9 +438,14 @@
           <b>Explanation:</b> The table above summarizes the accuracy (Tasks 1-3) and F1-scores (Tasks 4-6) across different federated learning settings, including domain gap, modality gap, label shift, and task heterogeneity. We benchmark our method, <b>F<sup>3</sup>OCUS</b>, against a wide range of state-of-the-art baselines including pruning, layer selection, and meta-heuristic approaches across ViLT and BLIP models.
         </p>
         <p>
-          <b>F<sup>3</sup>OCUS</b> consistently outperforms all competing methods in every task and model setting, demonstrating superior adaptation and collaboration in heterogeneous federated scenarios. Notably, our approach achieves higher scores with fewer trainable parameters, highlighting its efficiency for real-world resource-constrained federated learning.
+          <b>F<sup>3</sup>OCUS</b> consistently outperforms all competing methods in every task and model setting, demonstrating superior adaptation and collaboration in heterogeneous federated scenarios. Notably, our approach achieves higher scores with fewer trainable parameters, highlighting its efficiency for real-world resource-constrained federated learning. The reduction in computation and communication needs is shown in the Table below for Task 1:
         </p>
-        
+        <figure style="text-align: center;">
+        <img src="static/images/table2.PNG" alt="Performance Table" width="900" style="margin: auto;" />
+        <figcaption style="text-align: center; margin-top:0.8em;">
+          <b>Table:</b> Performance comparison with other PEFT methods on VLM layer selection across clients for Task 1.
+        </figcaption>
+      </figure>
       </div>
     </div>
   </div>
