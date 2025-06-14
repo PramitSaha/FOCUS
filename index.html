@@ -396,76 +396,28 @@
 </section>
 
 
-  
-
-<!-- <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-
-        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
-          Performance Comparison with State-of-the-Art
-        </h2>
-
-        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
-          <ul>
-            <li>
-              <b>PEFT Baselines:</b> F<sup>3</sup>OCUS outperforms popular parameter-efficient fine-tuning methods (LayerNorm Tuning, LoRA, Bias, Prompt, FedDAT) in both accuracy and efficiency, requiring fewer trainable parameters and lower computation.
-            </li>
-            <li>
-              <b>Personalized FL Baselines:</b> Consistent gains over 12 SOTA personalized FL methods (e.g., perFedAvg, MetaFed, FedPAC, FLUTE, FedALA, FedProto, etc.) across five tasks.
-            </li>
-            <li>
-              <b>Pruning Baselines:</b> Our LNTK-based selection surpasses classic pruning approaches (Federated Drop-out, Magnitude, FishMask, GraSP, SNIP, Synflow), with F<sup>3</sup>OCUS improving overall accuracy by up to 5.3% in both homogeneous and heterogeneous device settings.
-            </li>
-            <li>
-              <b>Layer Selection Baselines:</b> LNTK and F<sup>3</sup>OCUS outperform adapter-drop, RGN, Fedselect, and SPT, with F<sup>3</sup>OCUS providing the best balance of accuracy, fairness, and efficiency.
-            </li>
-          </ul>
-        </div>
-        <figure style="text-align: center;">
-          <img src="static/images/your_comparison_table.png" width="90%" alt="State-of-the-art comparison"/>
-          <figcaption>Comparison with PEFT, personalized FL, pruning, and layer selection baselines. (Table from paper)</figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Ablations & Visualizations -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-
-        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
-          Ablation Studies & Visualizations
-        </h2>
-        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
-          <ul>
-            <li>
-              <b>Meta-Heuristics:</b> F<sup>3</sup>OCUS uses meta-heuristic optimization (NSGA, ABC, ACO, SA, MOPSO), which achieves strong performance across diverse tasks and clients.
-            </li>
-            <li>
-              <b>Feature Visualization:</b> t-SNE plots show that F<sup>3</sup>OCUS generates more separable and discriminative features than pruning or standard PEFT.
-            </li>
-            <li>
-              <b>Convergence:</b> Loss curves highlight faster and more stable training convergence for F<sup>3</sup>OCUS.
-            </li>
-            <li>
-              <b>Layer Importance:</b> We visualize principal LNTK eigenvalues and selected layer ranks across all rounds, demonstrating how server-side optimization drives efficient, diverse adaptation.
-            </li>
-          </ul>
-        </div>
-        <figure style="text-align: center;">
-          <img src="static/images/your_visualization_figure.png" width="90%" alt="Ablation and feature visualization"/>
-          <figcaption>Example: t-SNE, loss curves, or layer rank visualizations. (See main paper figures)</figcaption>
-        </figure>
+    <div class="hero-body has-text-centered">
+      <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
+        Qualitative Performance
+      </h2>
+      <figure style="text-align: center;">
+        <img src="static/images/CVPR 2025 (16) (1).png" alt="Qualitative Performance" width="700" style="margin: auto;" />
+        <figcaption style="text-align: center; margin-top:0.8em;">
+          <b>Figure:</b> Example visual question answering (VQA) results on a subset of Ultra-MedVQA clients. 
+          The qualitative results highlight the effectiveness of F<sup>3</sup>OCUS in accurately predicting answers across a range of modalities and question types.
+        </figcaption>
+      </figure>
+      <div class="content" style="margin: auto; max-width: 800px; text-align: left; margin-top:1em;">
+        <p>
+          <b>Explanation:</b> The above figure showcases model predictions on real-world medical VQA samples drawn from diverse imaging modalities and clinical scenarios in Ultra-MedVQA. 
+          These qualitative results demonstrate that <b>F<sup>3</sup>OCUS</b> enables foundation models to generalize across heterogeneous medical domains, yielding reliable question answering and robust interpretation on previously unseen cases. Consistent performance is observed across modalities, supporting the practical applicability of our method in federated clinical environments.
+        </p>
       </div>
     </div>
   </div>
 </section>
- -->
 
 
 <!-- BibTeX -->
