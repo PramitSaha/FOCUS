@@ -173,10 +173,9 @@
           <div class="content">
             <h4 class="title is-5" style="text-align: center;">🔒 Challenges</h4>
             <p>
-            (1) <b>Resource Constraints: Massive Foundation Models</b> require extensive compute and data unfeasible for individual, resource-constrained clients (e.g., hospitals). <br>    
-            (2) <b>Layer Selection Dilemma: Uniform Layer Selection</b> or <b>naive strategies</b> often lead to overfitting, poor generalization, and underutilized client diversity.<br>
-            (3) <b>Conflicting Objectives:</b> Maximizing <b>local adaptation</b> vs. ensuring overall <b>layer diversity</b> is a multi-objective problem that traditional optimization struggles to solve, especially without access to server data. <br>            </p>
-          </div>
+            (1) <b>Resource Constraints:</b> Large foundation models demand compute and data beyond most clients’ capacity.<br>
+            (2) <b>Layer Selection Challenge:</b> Uniform or naive selection causes overfitting and misses client-specific needs.<br>
+            (3) <b>Competing Goals:</b> Balancing local adaptation and distributed layer updates is tough, especially with no server data.<br>  </div>
         </div>
         <!--/ reenact -->
         <!-- swap. -->
@@ -186,16 +185,9 @@
             <div class="column content">
               <p>
               <!-- <br> -->
-                (1) <b>Client-aware Layer Selection<b>: Use Neural Tangent Kernel (NTK) spectral analysis to identify the most impactful layers per client. <br>
-                (2) <b>Meta-heuristic Server Optimization<b>: Jointly optimize for high-importance and diverse layer participation without server data.
-
-Privacy-preserving Scalability:
-No raw data leaves the client; the approach scales efficiently and respects privacy.
-              (1) Using <b>Latent-level Diffusion</b> model (Stable Diffusion, SD).<br>
-              Also, SD's Autoencoder can generalize to segmentation maps. <b> No fintune needed.</b><br>
-              <!-- (1) Building our model based on Stable Diffusion model, which conduct diffusion process on a much smaller <b>latent space</b>.<br> -->
-              (2) Designing a <b>single-step reverse process</b> with strong <b>stability against initial noise</b>.
-              <!-- (2) Constructing a <b>single-step reverse process</b> with strong <b>stability among different initial noise</b> to speed up inference. -->
+                <b>Client Layer Importance:</b> Neural Tangent Kernel spectral analysis scores each layer per client for targeted adaptation.<br>
+                <b>Server-Side Layer Balancing:</b> Meta-heuristics jointly maximize client gains and distribute layer updates across clients.<br>
+                <b>Privacy-Preserving:</b> All optimization happens without sharing raw data or presence of server data.<br>
               </p>
             </div>
           </div>
