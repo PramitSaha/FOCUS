@@ -357,19 +357,86 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-          Experiments & Results</h2>
-        <img src="static/images/your_results_figure.png" alt="Results overview" width="800" style="margin: auto;" />
-        <p style="margin-top:1em;">
-          - Compared against standard layer selection, pruning, and PEFT baselines.<br>
-          - Validated on 6 FL tasks: VQA, Image/Text-based Disease Detection, and Heterogeneous settings.<br>
-          - F<sup>3</sup>OCUS shows <b>consistent gains in accuracy, fairness, and efficiency</b>.<br>
-          - Ablation: Meta-heuristics outperform standard optimization, balancing adaptation and collaboration.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+
+        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo);
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
+          Experiments & Results
+        </h2>
+
+        <!-- FL Settings, Datasets, and Tasks -->
+        <h4 class="subtitle">FL Settings, Datasets, and Tasks</h4>
+        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
+          <p>
+            We evaluate <b>F<sup>3</sup>OCUS</b> for selective fine-tuning of layers and adapters across four vision-language models (ViLT, ALBEF, Llava-1.5, BLIP-2) and multiple federated learning settings:
+          </p>
+          <ul>
+            <li><b>Visual Question Answering:</b> (i) <b>Task 1:</b> 5 clients, domain gap (SLAKE, VQA-RAD, VQA-Med 2019/2020/2021), (ii) <b>Task 2:</b> 8 modality clients (CT, Ultrasound, etc.), (iii) <b>Task 3:</b> 9 clients on Ultra-MedVQA.</li>
+            <li><b>Multi-label Disease Classification:</b> (iv) <b>Task 4:</b> 4 clients (Open-I), (v) <b>Task 5:</b> 10 clients (MIMIC), both with label shift (Dirichlet, 15 classes).</li>
+            <li><b>Heterogeneous Tasks:</b> (vi) <b>Task 6:</b> Combined VQA (3 clients) and disease-classification (2 clients).</li>
+          </ul>
+          <p>
+            <b>Device Heterogeneity:</b> We vary the number of trainable layers per client/task to simulate diverse resource budgets.<br>
+            <i>See Supplement C for full dataset and implementation details.</i>
+          </p>
+        </div>
+
+        <!-- Placeholder Figure/Table -->
+        <figure style="text-align: center;">
+          <img src="static/images/your_results_overview.png" width="100%" alt="Results overview table"/>
+          <figcaption>Performance comparison of F<sup>3</sup>OCUS with baselines across all FL tasks and architectures. (See paper for details)</figcaption>
+        </figure>
+
+        <!-- Performance Comparison -->
+        <h4 class="subtitle">Performance Comparison with State-of-the-Art</h4>
+        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
+          <ul>
+            <li>
+              <b>PEFT Baselines:</b> F<sup>3</sup>OCUS outperforms popular parameter-efficient fine-tuning methods (LayerNorm Tuning, LoRA, Bias, Prompt, FedDAT) in both accuracy and efficiency, requiring fewer trainable parameters and lower computation.
+            </li>
+            <li>
+              <b>Personalized FL Baselines:</b> Consistent gains over 12 SOTA personalized FL methods (e.g., perFedAvg, MetaFed, FedPAC, FLUTE, FedALA, FedProto, etc.) across five tasks.
+            </li>
+            <li>
+              <b>Pruning Baselines:</b> Our LNTK-based selection surpasses classic pruning approaches (Federated Drop-out, Magnitude, FishMask, GraSP, SNIP, Synflow), with F<sup>3</sup>OCUS improving overall accuracy by up to 5.3% in both homogeneous and heterogeneous device settings.
+            </li>
+            <li>
+              <b>Layer Selection Baselines:</b> LNTK and F<sup>3</sup>OCUS outperform adapter-drop, RGN, Fedselect, and SPT, with F<sup>3</sup>OCUS providing the best balance of accuracy, fairness, and efficiency.
+            </li>
+          </ul>
+        </div>
+        <!-- Placeholder for SOTA Comparison Table -->
+        <figure style="text-align: center;">
+          <img src="static/images/your_comparison_table.png" width="90%" alt="State-of-the-art comparison"/>
+          <figcaption>Comparison with PEFT, personalized FL, pruning, and layer selection baselines. (Table from paper)</figcaption>
+        </figure>
+
+        <!-- Ablations & Visualizations -->
+        <h4 class="subtitle">Ablation Studies & Visualizations</h4>
+        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
+          <ul>
+            <li>
+              <b>Meta-Heuristics:</b> F<sup>3</sup>OCUS uses meta-heuristic optimization (NSGA, ABC, ACO, SA, MOPSO), which achieves strong performance across diverse tasks and clients.
+            </li>
+            <li>
+              <b>Feature Visualization:</b> t-SNE plots show that F<sup>3</sup>OCUS generates more separable and discriminative features than pruning or standard PEFT.
+            </li>
+            <li>
+              <b>Convergence:</b> Loss curves highlight faster and more stable training convergence for F<sup>3</sup>OCUS.
+            </li>
+            <li>
+              <b>Layer Importance:</b> We visualize principal LNTK eigenvalues and selected layer ranks across all rounds, demonstrating how server-side optimization drives efficient, diverse adaptation.
+            </li>
+          </ul>
+        </div>
+        <!-- Placeholder for Visualizations -->
+        <figure style="text-align: center;">
+          <img src="static/images/your_visualization_figure.png" width="90%" alt="Ablation and feature visualization"/>
+          <figcaption>Example: t-SNE, loss curves, or layer rank visualizations. (See main paper figures)</figcaption>
+        </figure>
+
+        <h4 class="subtitle">Conclusion</h4>
+        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
+
 
 <!-- BibTeX -->
 <section class="section hero">
