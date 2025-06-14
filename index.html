@@ -296,22 +296,61 @@
 
 
 
-<!-- Dataset -->
+<!-- Dataset Section: Ultra-MedVQA -->
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
-          MedVQA-FL Dataset</h2>
-        <img src="static/images/your_dataset_figure.png" alt="MedVQA-FL dataset" width="800" style="margin: auto;" />
-        <p style="margin-top:1em;">
-          <b>MedVQA-FL</b> is a new federated VQA dataset with 707,962 triplets across 12 anatomical categories (Colon, Lung, Skin, Eye, Breast, Kidney, Blood, Femur, Heart, Liver, Pancreas, Spleen), partitioned to simulate 9 modality-specific clients.<br>
-          <a href="https://github.com/PramitSaha/FOCUS-CVPR-2025" target="_blank"><b>[Code & Data Release]</b></a>
-        </p>
+
+        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); 
+          -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
+          Ultra-MedVQA Dataset
+        </h2>
+
+        <img src="static/images/your_dataset_figure.png" alt="Ultra-MedVQA overview" width="800" style="margin: auto;" />
+
+        <div class="content" style="text-align: left; margin: auto; max-width: 800px; margin-top:1.5em;">
+          <p>
+            <b>Ultra-MedVQA</b> is a large-scale, federated medical VQA benchmark featuring <b>707,962 image–QA triplets</b> across 9 imaging modalities and 12 anatomical categories, distributed as 9 simulated clients. It maximizes real medical image utility and supports robust federated VQA evaluation.
+          </p>
+
+          <ol>
+            <li>
+              <b>Preparation of Original Dataset:</b>
+              <br>
+              Compiled from <b>10 diverse medical datasets</b> (<a href="https://medmnist.com/" target="_blank">MedMNIST</a> and others), representing <b>Chest X-ray</b> (117,976), <b>Optical Coherence Tomography</b> (109,309), <b>Colon Pathology</b> (107,180), <b>Dermatoscope</b> (10,015), <b>Fundus</b> (1,600), <b>Ultrasound</b> (780), <b>Blood Microscope</b> (17,092), <b>Kidney Cortex Microscope</b> (236,386), <b>Abdominal CT</b> (107,624). Each dataset acts as a modality-specific client, split 80% train / 20% test.
+            </li>
+            <li>
+              <b>Question-Answer Template Design:</b>
+              <br>
+              Category and attribute labels are programmatically converted to QA pairs using structured templates. Example: <i>“Q: What is the specific diagnosis for the lung in this image? A: Pneumothorax.”</i> Questions also cover modality, anatomy, and tissue localization.
+              <ul style="margin-top:0.5em;">
+                <li><b>Question types:</b> Modality Recognition (~10%), Anatomy Identification (~20%), Disease Diagnosis (~39%), Disease Grading (~1%), Tissue ID (~20%), Other Biological Attributes (~10%).</li>
+              </ul>
+            </li>
+            <li>
+              <b>Question-Answer Refinement:</b>
+              <br>
+              To maximize natural diversity, each question is paraphrased using ChatGPT-4o for varied style and expression, while preserving meaning.
+            </li>
+            <li>
+              <b>Manual Double Checking:</b>
+              <br>
+              All samples were further reviewed to ensure QA pair correctness and overall dataset quality.
+            </li>
+          </ol>
+
+          <p style="margin-top:1em;">
+            <b>Ultra-MedVQA</b> provides a challenging, multi-modal federated VQA setting with fine-grained evaluation across anatomical regions (Colon, Lung, Skin, Eye, Breast, Kidney, Blood, Femur, Heart, Liver, Pancreas, Spleen) and modalities.
+            <br>
+            <a href="https://github.com/PramitSaha/FOCUS-CVPR-2025" target="_blank"><b>[Code & Data Release]</b></a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Experiments & Results -->
 <section class="section hero is-light">
