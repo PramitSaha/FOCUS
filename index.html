@@ -403,30 +403,19 @@
         Qualitative Performance
       </h2>
       <figure style="text-align: center;">
-        <img src="static/images/CVPR 2025 (21) (1).png" alt="Qualitative Performance" width="800" style="margin: auto;" />
-        <figcaption style="text-align: center; margin-top:0.8em;">
-          <b>Figure:</b> Example visual question answering (VQA) results on a subset of Ultra-MedVQA clients. 
-          The qualitative results highlight the effectiveness of F<sup>3</sup>OCUS in accurately predicting answers across a range of modalities and question types.
-        </figcaption>
-      </figure>
-      <figure style="text-align: center;">
         <img src="static/images/CVPR 2025 (20) (2).png" alt="Qualitative Performance" width="800" style="margin: auto;" />
-        <figcaption style="text-align: center; margin-top:0.8em;">
-          <b>Figure:</b> Example visual question answering (VQA) results on a subset of Ultra-MedVQA clients. 
-          The qualitative results highlight the effectiveness of F<sup>3</sup>OCUS in accurately predicting answers across a range of modalities and question types.
-        </figcaption>
       </figure>
       <figure style="text-align: center;">
         <img src="static/images/CVPR 2025 (19) (1).png" alt="Qualitative Performance" width="800" style="margin: auto;" />
         <figcaption style="text-align: center; margin-top:0.8em;">
-          <b>Figure:</b> Example visual question answering (VQA) results on a subset of Ultra-MedVQA clients. 
-          The qualitative results highlight the effectiveness of F<sup>3</sup>OCUS in accurately predicting answers across a range of modalities and question types.
+          <b>t-SNE Visualization showing separability.
         </figcaption>
       </figure>
       <div class="content" style="margin: auto; max-width: 800px; text-align: left; margin-top:1em;">
         <p>
-          <b>Explanation:</b> The above figure showcases model predictions on real-world medical VQA samples drawn from diverse imaging modalities and clinical scenarios in Ultra-MedVQA. 
-          These qualitative results demonstrate that <b>F<sup>3</sup>OCUS</b> enables foundation models to generalize across heterogeneous medical domains, yielding reliable question answering and robust interpretation on previously unseen cases. Consistent performance is observed across modalities, supporting the practical applicability of our method in federated clinical environments.
+          <b>Explanation:</b> The t-SNE plots above visualize the learned feature spaces for four different medical imaging modalities in Task 2. 
+          Compared to Federated Dropout and the standard approach of fine-tuning the last K layers, <b>F<sup>3</sup>OCUS</b> produces more distinct and well-separated feature clusters, demonstrating improved class discriminability and representation quality across clients. This highlights the effectiveness of our selective layer adaptation strategy for heterogeneous federated learning.
+        
         </p>
       </div>
     </div>
@@ -448,33 +437,6 @@
     </code></pre>
   </div>
 </section>
-
-<!-- Acknowledgements 
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <h2 class="title">Acknowledgements</h2>
-    <p>
-      This research was supported by the UK Engineering and Physical Sciences Research Council (EPSRC), University of Oxford, and the Royal Academy of Engineering.  
-      <br>
-      Thanks to all collaborators, co-authors, and institutions for their contributions.
-    </p>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            Page built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> (adapted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>).
-            <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer> -->
 
 </body>
 </html>
