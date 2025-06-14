@@ -351,18 +351,17 @@
   </div>
 </section>
 
-
-<!-- Experiments & Results -->
-<section class="section hero">
+<!-- FL Settings, Datasets, and Tasks -->
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
 
-        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo);
-          -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
+        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
           FL Settings, Datasets, and Tasks
         </h2>
 
+        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
           <p>
             We evaluate <b>F<sup>3</sup>OCUS</b> for selective fine-tuning of layers and adapters across four vision-language models (ViLT, ALBEF, Llava-1.5, BLIP-2) and multiple federated learning settings:
           </p>
@@ -377,14 +376,26 @@
           </p>
         </div>
 
-        <!-- Placeholder Figure/Table -->
         <figure style="text-align: center;">
           <img src="static/images/your_results_overview.png" width="100%" alt="Results overview table"/>
           <figcaption>Performance comparison of F<sup>3</sup>OCUS with baselines across all FL tasks and architectures. (See paper for details)</figcaption>
         </figure>
 
-        <!-- Performance Comparison -->
-        <h4 class="subtitle">Performance Comparison with State-of-the-Art</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Performance Comparison -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
+          Performance Comparison with State-of-the-Art
+        </h2>
+
         <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
           <ul>
             <li>
@@ -401,14 +412,24 @@
             </li>
           </ul>
         </div>
-        <!-- Placeholder for SOTA Comparison Table -->
         <figure style="text-align: center;">
           <img src="static/images/your_comparison_table.png" width="90%" alt="State-of-the-art comparison"/>
           <figcaption>Comparison with PEFT, personalized FL, pruning, and layer selection baselines. (Table from paper)</figcaption>
         </figure>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Ablations & Visualizations -->
-        <h4 class="subtitle">Ablation Studies & Visualizations</h4>
+<!-- Ablations & Visualizations -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
+          Ablation Studies & Visualizations
+        </h2>
         <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
           <ul>
             <li>
@@ -425,11 +446,33 @@
             </li>
           </ul>
         </div>
-        <!-- Placeholder for Visualizations -->
         <figure style="text-align: center;">
           <img src="static/images/your_visualization_figure.png" width="90%" alt="Ablation and feature visualization"/>
           <figcaption>Example: t-SNE, loss curves, or layer rank visualizations. (See main paper figures)</figcaption>
         </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Conclusion -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
+          Conclusion
+        </h2>
+        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
+          <p>
+            <b>F<sup>3</sup>OCUS</b> offers a principled, scalable approach to client-specific federated fine-tuning of large vision-language models, improving both accuracy and fairness without server data. Our released <b>Ultra-MedVQA</b> dataset enables further research on federated VQA. Experimental results confirm the consistent superiority of F<sup>3</sup>OCUS across tasks, models, and FL settings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- BibTeX -->
