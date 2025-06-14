@@ -235,6 +235,71 @@
   </div>
 </section>
 
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
+          Server-side Multi-objective Optimization
+        </h2>
+        <h4 class="subtitle">Balancing Adaptation and Layer Diversity</h4>
+
+        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
+          <p>
+            On the server, we refine layer selection to jointly <b>maximize adaptation</b> (via client-specific importance) and <b>balance layer usage</b> across clients. We formalize this as a multi-objective problem:
+          </p>
+          <p>
+            <b>Objectives:</b>
+            <ul>
+              <li>Maximize total client importance: \( \sum_{i=1}^N \sum_{l=1}^L S_i^l \)</li>
+              <li>Minimize variance in layer usage: \( \frac{1}{L} \sum_{l=1}^L (n_l - \bar{n})^2 \), where \( n_l \) is the number of clients choosing layer \( l \) and \( \bar{n} \) is the average.</li>
+            </ul>
+          </p>
+          <p>
+            <b>Constraint:</b> Each client can only select up to their own budget of layers.
+          </p>
+          <p style="text-align: center;">
+            $$
+            \begin{cases}
+              \mathbf{max} & \sum\limits_{i=1}^{N} \sum\limits_{l=1}^L S_{i}^{l} \\
+              \mathbf{min} & \frac{1}{L} \sum\limits_{l=1}^{L} ( n_l - \bar{n} )^2 \\
+              \text{s.t.} & \sum_{l \in \mathcal{L}_i} m_{i}^{l} \leq L_{\text{i,max}}, \ \forall i
+            \end{cases}
+            $$
+          </p>
+          <figure style="text-align: center;">
+            <img src="static/images/CVPR_2025_10.png" width="90%" alt="Layer selection histogram"/>
+            <figcaption style="text-align: center;">
+              Server-level optimization promotes diverse layer participation and avoids overfitting to a few layers.
+            </figcaption>
+          </figure>
+          <p>
+            <b>Why Meta-heuristics?</b> Traditional methods struggle as the search space is huge and no client data is available on the server. We use five representative meta-heuristic algorithms to find a set of optimal trade-offs:
+          </p>
+          <ul>
+            <li><b>NSGA-II:</b> Evolves layer selections via crossover/mutation; balances exploration and exploitation using non-dominated sorting and crowding distance.</li>
+            <li><b>Artificial Bee Colony (ABC):</b> Bees represent candidate selections, with phases for exploring, exploiting, and diversifying solutions based on importance and diversity.</li>
+            <li><b>Ant Colony Optimization (ACO):</b> Ants build layer assignments using pheromone trails and importance scores, encouraging exploration and reinforcing successful patterns.</li>
+            <li><b>Simulated Annealing (SA):</b> Explores layer assignments via probabilistic acceptance, gradually refining towards balanced, high-importance solutions as the "temperature" cools.</li>
+            <li><b>Multi-Objective Particle Swarm Optimization (MOPSO):</b> Particles update assignments by combining their own best with globally best solutions, balancing adaptation and diversity.</li>
+          </ul>
+          <figure style="text-align: center;">
+            <img src="static/images/CVPR_2025_14.png" width="100%" alt="Sample VQA triplets"/>
+            <figcaption style="text-align: center;">
+              Example: Medical VQA triplets from 9 modality-specific clients.
+            </figcaption>
+          </figure>
+          <p>
+            <b>See Supplement for more details and pseudo-code.</b>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- Dataset -->
 <section class="section hero">
