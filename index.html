@@ -261,6 +261,77 @@
   </div>
 </footer> -->
 
+  <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
+          Client-level Layer Importance
+        </h2>
+
+        <h4 class="subtitle">Layerwise Neural Tangent Kernel (LNTK) for Prioritizing Layers</h4>
+
+        <div class="content" style="text-align: left; margin: auto; max-width: 800px;">
+          <p>
+            To prioritize which model layers to fine-tune for each client, we leverage the <b>Layerwise Neural Tangent Kernel (LNTK)</b>. This approach quantifies how much each layer contributes to client-specific learning dynamics.
+          </p>
+          <p>
+            For a neural network function <i>f</i> trained on client data <b>&Xscr;</b>, the evolution of the model can be described using the Neural Tangent Kernel (NTK):
+          </p>
+          <pre><code>
+<span style="font-size:90%;">$\dot{\theta}_t = -\eta \nabla_{\theta} f(\mathcal{X}; \theta_t)^T \nabla_{f} F(\mathcal{X}; \theta_t)$</span>
+<span style="font-size:90%;">$\dot{f} = -\eta \Theta(\mathcal{X}, \mathcal{X}) \nabla_{f} F(\mathcal{X}; \theta_t)$</span>
+          </code></pre>
+          <p>
+            Here, <b>$\Theta(\mathcal{X}, \mathcal{X})$</b> is the NTK matrix:
+          </p>
+          <pre><code>
+<span style="font-size:90%;">$\Theta_t(\mathcal{X}, \mathcal{X}) = \nabla_{\theta} f(\mathcal{X}; \theta_t) \nabla_{\theta} f(\mathcal{X}; \theta_t)^T$</span>
+          </code></pre>
+          <p>
+            The NTK can be decomposed into layerwise components (LNTK):
+          </p>
+          <pre><code>
+<span style="font-size:90%;">$\Theta^l(\mathcal{X}, \mathcal{X}) = \nabla_{\theta^l} f (\mathcal{X}; \theta^l) \nabla_{\theta^l} f(\mathcal{X}; \theta^l)^T$</span>
+          </code></pre>
+          <p>
+            The overall NTK is the sum across layers:
+          </p>
+          <pre><code>
+<span style="font-size:90%;">$\Theta(\mathcal{X}, \mathcal{X}) = \sum_{l=1}^L \Theta^l(\mathcal{X}, \mathcal{X})$</span>
+          </code></pre>
+          <p>
+            Each layer’s LNTK is a real, symmetric, positive semi-definite matrix. We perform eigendecomposition:
+          </p>
+          <pre><code>
+<span style="font-size:90%;">$\Theta^l = U^l \Lambda^l (U^l)^T = \sum_j \lambda^l_j u^l_j (u^l_j)^T$</span>
+          </code></pre>
+          <p>
+            The <b>principal eigenvalue</b> $\lambda^l_1$ of each layer’s LNTK dominates the layer’s training dynamics (spectral bias). Layers with higher $\lambda^l_1$ are learned more quickly and have greater alignment with the client’s data.
+          </p>
+
+          <figure style="text-align: center;">
+            <img src="static/images/CVPR_2025_3.png" width="90%" alt="Layerwise LNTK ranks illustration"/>
+            <figcaption style="text-align: center;">Visualization of LNTK-based layer ranks across clients and rounds. Darker color = higher importance.</figcaption>
+          </figure>
+
+          <p>
+            We define the <b>client-specific layer importance score</b> as a normalized principal eigenvalue:
+          </p>
+          <pre><code>
+<span style="font-size:90%;">$S^l_i = \frac{\lambda^l_{i, 1}}{\sum_{k=1}^L \lambda^k_{i, 1}}$</span>
+          </code></pre>
+          <p>
+            This measures the relative importance of each layer for client <i>i</i>, enabling selective and efficient fine-tuning for federated learning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 </body>
 </html>
 
