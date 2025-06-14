@@ -157,6 +157,49 @@
         
       </p>
     </div>
+
+    <section class="section hero">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-2" style="background: linear-gradient(to right,  indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent;line-height: 1.5;">
+            Motivation</h2>
+        <h5 class="title is-5" style="text-align: center;">
+          Inspired by the <a href="https://en.wikipedia.org/wiki/Occam%27s_razor">Occam's razor</a>✂️, we believe that remove redundant techniques in conventional diffusion models can benefit segmentation task. 
+        </h5>
+
+        <div class="columns is-centered">
+        <!-- reenact. -->
+        <div class="column">
+          <div class="content">
+            <h4 class="title is-5" style="text-align: center;">🔒 Challenges</h4>
+            <p>
+            (1) <b>Pixel-level Diffusion process</b> is computing resource-consuming during training.<br>
+            <!-- (1) <b>Diffusion process in pixel-space</b> brings computing resource-consuming issue during training stage.<br> -->
+            (2) <b>Multi-step reverse process</b> and <b>multiple-sample average scheme</b> are time-consuming during inference.
+            </p>
+          </div>
+        </div>
+        <!--/ reenact -->
+        <!-- swap. -->
+        <div class="column">
+          <h4 class="title is-5" style="text-align: center;">🔑 Solutions</h4>
+          <div class="columns is-centered">
+            <div class="column content">
+              <p>
+              <!-- <br> -->
+              (1) Using <b>Latent-level Diffusion</b> model (Stable Diffusion, SD).<br>
+              Also, SD's Autoencoder can generalize to segmentation maps. <b> No fintune needed.</b><br>
+              <!-- (1) Building our model based on Stable Diffusion model, which conduct diffusion process on a much smaller <b>latent space</b>.<br> -->
+              (2) Designing a <b>single-step reverse process</b> with strong <b>stability against initial noise</b>.
+              <!-- (2) Constructing a <b>single-step reverse process</b> with strong <b>stability among different initial noise</b> to speed up inference. -->
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ swap. -->
+      </div>
+
   
 
   <!-- Statcounter tracking code -->
