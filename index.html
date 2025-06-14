@@ -394,8 +394,7 @@
     </div>
   </div>
 </section>
-
-
+  
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="hero-body has-text-centered">
@@ -408,7 +407,7 @@
       <figure style="text-align: center;">
         <img src="static/images/CVPR 2025 (19) (1).png" alt="Qualitative Performance" width="800" style="margin: auto;" />
         <figcaption style="text-align: center; margin-top:0.8em;">
-          <b>t-SNE Visualization showing separability of the embeddings </b>.
+          <b>t-SNE Visualization showing separability of the embeddings across different clients</b>.
         </figcaption>
       </figure>
       <div class="content" style="margin: auto; max-width: 800px; text-align: left; margin-top:1em;">
@@ -417,6 +416,31 @@
           Compared to Federated Dropout and the standard approach of fine-tuning the last K layers, <b>F<sup>3</sup>OCUS</b> produces more distinct and well-separated feature clusters, demonstrating improved class discriminability and representation quality across clients. This highlights the effectiveness of our selective layer adaptation strategy for heterogeneous federated learning.
         
         </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <h2 class="title is-2" style="background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.5;">
+        Quantitative Performance
+      </h2>
+      <figure style="text-align: center;">
+        <img src="static/images/table.png" alt="Performance Table (Placeholder)" width="900" style="margin: auto;" />
+        <figcaption style="text-align: center; margin-top:0.8em;">
+          <b>Table:</b> Performance comparison on VLM layer selection with heterogeneous resources across clients for six federated tasks and multiple model architectures.
+        </figcaption>
+      </figure>
+      <div class="content" style="margin: auto; max-width: 800px; text-align: left; margin-top:1em;">
+        <p>
+          <b>Explanation:</b> The table above summarizes the accuracy (Tasks 1-3) and F1-scores (Tasks 4-6) across different federated learning settings, including domain gap, modality gap, label shift, and task heterogeneity. We benchmark our method, <b>F<sup>3</sup>OCUS</b>, against a wide range of state-of-the-art baselines including pruning, layer selection, and meta-heuristic approaches across ViLT and BLIP models.
+        </p>
+        <p>
+          <b>F<sup>3</sup>OCUS</b> consistently outperforms all competing methods in every task and model setting, demonstrating superior adaptation and collaboration in heterogeneous federated scenarios. Notably, our approach achieves higher scores with fewer trainable parameters, highlighting its efficiency for real-world resource-constrained federated learning.
+        </p>
+        
       </div>
     </div>
   </div>
