@@ -366,9 +366,15 @@
             We evaluate <b>F<sup>3</sup>OCUS</b> for selective fine-tuning of layers and adapters across four vision-language models (ViLT, ALBEF, Llava-1.5, BLIP-2) and multiple federated learning settings:
           </p>
           <ul>
-            <li><b>Visual Question Answering:</b> (i) <b>Task 1:</b> 5 clients, domain gap (SLAKE, VQA-RAD, VQA-Med 2019/2020/2021), (ii) <b>Task 2:</b> 8 modality clients (CT, Ultrasound, etc.), (iii) <b>Task 3:</b> 9 clients on Ultra-MedVQA.</li>
-            <li><b>Multi-label Disease Classification:</b> (iv) <b>Task 4:</b> 4 clients (Open-I), (v) <b>Task 5:</b> 10 clients (MIMIC), both with label shift (Dirichlet, 15 classes).</li>
-            <li><b>Heterogeneous Tasks:</b> (vi) <b>Task 6:</b> Combined VQA (3 clients) and disease-classification (2 clients).</li>
+            <li><b>Visual Question Answering:</b> 
+              (i) <b>Task 1:</b> 5 clients, domain gap (SLAKE, VQA-RAD, VQA-Med 2019/2020/2021), 
+              (ii) <b>Task 2:</b> 8 modality clients (CT, Ultrasound, etc.), 
+              (iii) <b>Task 3:</b> 9 clients on Ultra-MedVQA.</li>
+            <li><b>Multi-label Disease Classification:</b> 
+              (iv) <b>Task 4:</b> 4 clients (Open-I), 
+              (v) <b>Task 5:</b> 10 clients (MIMIC), both with label shift (Dirichlet, 15 classes).</li>
+            <li><b>Heterogeneous Tasks:</b> 
+              (vi) <b>Task 6:</b> Combined VQA (3 clients) and disease-classification (2 clients).</li>
           </ul>
           <p>
             <b>Device Heterogeneity:</b> We vary the number of trainable layers per client/task to simulate diverse resource budgets.<br>
