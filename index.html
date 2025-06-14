@@ -441,11 +441,21 @@
           <b>F<sup>3</sup>OCUS</b> consistently outperforms all competing methods in every task and model setting, demonstrating superior adaptation and collaboration in heterogeneous federated scenarios. Notably, our approach achieves higher scores with fewer trainable parameters, highlighting its efficiency for real-world resource-constrained federated learning. The reduction in computation and communication needs is shown in the Table below for Task 1:
         </p>
         <figure style="text-align: center;">
-        <img src="static/images/table2.PNG" alt="Performance Table" width="900" style="margin: auto;" />
+        <img src="static/images/Table2.PNG" alt="Performance Table" width="900" style="margin: auto;" />
         <figcaption style="text-align: center; margin-top:0.8em;">
           <b>Table:</b> Performance comparison with other PEFT methods on VLM layer selection across clients for Task 1.
         </figcaption>
       </figure>
+      <div class="content" style="margin: auto; max-width: 800px; text-align: left; margin-top:1em;">
+        <p>
+          <b>Explanation:</b> The table above presents a comprehensive comparison between <b>F<sup>3</sup>OCUS</b> and 5 leading PEFT baselines: LayerNorm Tuning (LN), LoRA, Bias Tuning, Prompt Tuning, and FedDAT. We evaluate each method in terms of communication overhead, computational requirements, parameter efficiency, and accuracy on all clients.
+        </p>
+        <p>
+          <b>F<sup>3</sup>OCUS</b> consistently surpasses all PEFT baselines except adapters and FedDAT. Notably, FedDAT and adapter-based methods fine-tune all adapters in each client, while <b>F<sup>3</sup>OCUS</b> selectively adapts only 4 adapter layers per client. This leads to a substantial reduction in communication cost (down to 9.7 MBits) and computation (80.6 GFLOPs), while maintaining or exceeding performance across clients.
+        </p>
+        <p>
+          <i>Conclusion:</i> These results highlight the efficiency and scalability of <b>F<sup>3</sup>OCUS</b> for real-world federated learning scenarios, where client resource constraints are critical.
+        </p>
       </div>
     </div>
   </div>
