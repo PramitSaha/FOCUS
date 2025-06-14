@@ -365,27 +365,31 @@
           <p>
             We evaluate <b>F<sup>3</sup>OCUS</b> for selective fine-tuning of layers and adapters across four vision-language models (ViLT, ALBEF, Llava-1.5, BLIP-2) and multiple federated learning settings:
           </p>
-          <ul>
-            <li><b>Visual Question Answering:</b> 
-              (i) <b>Task 1:</b> 5 clients, domain gap (SLAKE, VQA-RAD, VQA-Med 2019/2020/2021), 
-              (ii) <b>Task 2:</b> 8 modality clients (CT, Ultrasound, etc.), 
-              (iii) <b>Task 3:</b> 9 clients on Ultra-MedVQA.</li>
-            <li><b>Multi-label Disease Classification:</b> 
-              (iv) <b>Task 4:</b> 4 clients (Open-I), 
-              (v) <b>Task 5:</b> 10 clients (MIMIC), both with label shift (Dirichlet, 15 classes).</li>
-            <li><b>Heterogeneous Tasks:</b> 
-              (vi) <b>Task 6:</b> Combined VQA (3 clients) and disease-classification (2 clients).</li>
-          </ul>
+<ul>
+  <li><b>Visual Question Answering:</b>
+    <ul style="list-style: none; padding-left: 1em;">
+      <li>(i) <b>Task 1:</b> 5 clients, domain gap (SLAKE, VQA-RAD, VQA-Med 2019/2020/2021)</li>
+      <li>(ii) <b>Task 2:</b> 8 modality clients (CT, Ultrasound, etc.)</li>
+      <li>(iii) <b>Task 3:</b> 9 clients on Ultra-MedVQA</li>
+    </ul>
+  </li>
+  <li><b>Multi-label Disease Classification:</b>
+    <ul style="list-style: none; padding-left: 1em;">
+      <li>(iv) <b>Task 4:</b> 4 clients (Open-I)</li>
+      <li>(v) <b>Task 5:</b> 10 clients (MIMIC), both with label shift (Dirichlet, 15 classes)</li>
+    </ul>
+  </li>
+  <li><b>Heterogeneous Tasks:</b>
+    <ul style="list-style: none; padding-left: 1em;">
+      <li>(vi) <b>Task 6:</b> Combined VQA (3 clients) and disease-classification (2 clients)</li>
+    </ul>
+  </li>
+</ul>
+
           <p>
             <b>Device Heterogeneity:</b> We vary the number of trainable layers per client/task to simulate diverse resource budgets.<br>
           </p>
         </div>
-
-        <figure style="text-align: center;">
-          <img src="static/images/your_results_overview.png" width="100%" alt="Results overview table"/>
-          <figcaption>Performance comparison of F<sup>3</sup>OCUS with baselines across all FL tasks and architectures. (See paper for details)</figcaption>
-        </figure>
-
       </div>
     </div>
   </div>
